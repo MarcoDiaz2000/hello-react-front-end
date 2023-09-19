@@ -1,8 +1,7 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { setGreeting } from '../redux/actions';
-import axios from 'axios';
-import { fetchGreeting } from '../api/api'; 
+import setGreeting from '../redux/actions';
+import fetchGreeting from '../api/api';
 
 const Greeting = () => {
   const dispatch = useDispatch();
@@ -10,13 +9,13 @@ const Greeting = () => {
 
   useEffect(() => {
     fetchGreeting()
-      .then(greeting => {
+      .then((greeting) => {
         dispatch(setGreeting(greeting));
       })
-      .catch(error => {
-        console.error("Hubo un error con la petición: ", error);
+      .catch(() => {
+        //
       });
-  }, []);
+  }, [dispatch]);
 
   return (
     <div>

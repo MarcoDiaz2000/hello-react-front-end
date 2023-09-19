@@ -1,6 +1,6 @@
-export const setGreeting = (greeting) => {
-  return {
-    type: 'SET_GREETING',
-    payload: greeting,
-  };
-};
+const setGreeting = (greeting) => ({
+  type: 'SET_GREETING',
+  payload: greeting,
+});
+
+export default setGreeting;
